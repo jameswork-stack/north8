@@ -1155,6 +1155,11 @@ header {
     .hero h1 {
         font-size: 2rem;
     }
+
+    header {
+        padding: 10px 5px;
+
+    }
     
     .section-title {
         font-size: 1.8rem;
