@@ -1571,7 +1571,9 @@ header {
         flex-direction: column;
         margin-left: 0;
     }
-    
+    .spacer {
+        height: 200px;
+    }
     .logo {
         justify-content: center;
         margin-right: 0;
@@ -1596,6 +1598,9 @@ header {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+    }
+    .spacer {
+        height: 180px;
     }
     
     nav ul {
@@ -1647,6 +1652,9 @@ header {
     .logo img {
         width: 50px;
         height: 50px;
+    }
+    .spacer {
+        height: 150px;
     }
     
     .sec1 .card h1 {
@@ -1739,6 +1747,9 @@ img {
     }
     .contacts {
         margin-bottom: 20px;
+    }
+    .spacer {
+        height: 150px;
     }
     
 }
