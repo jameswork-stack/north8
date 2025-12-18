@@ -1162,6 +1162,10 @@ header {
     .hero h1 {
         font-size: 2rem;
     }
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
 
     header {
         padding: 10px 5px;
@@ -1641,7 +1645,8 @@ header {
     }
     
     .logo img {
-        width: 80px;
+        width: 50px;
+        height: 50px;
     }
     
     .sec1 .card h1 {
