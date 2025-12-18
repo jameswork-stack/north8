@@ -100,12 +100,18 @@ if (contactForm) {
         e.preventDefault();
         
         // Show loading state
-        submitBtn.classList.add('loading');
+        const submitBtn = contactForm.querySelector('#submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        if (btnText) btnText.style.display = 'none';
+        if (btnLoading) btnLoading.style.display = 'inline-block';
         submitBtn.disabled = true;
         
         try {
             const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
+            // Add Formspree endpoint
+            const response = await fetch('https://formspree.io/f/mnnekjrd', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -119,7 +125,9 @@ if (contactForm) {
                 // Show success popup
                 showPopup();
             } else {
-                throw new Error('Form submission failed');
+                const errorData = await response.json();
+                console.error('Form submission error:', errorData);
+                throw new Error(errorData.error || 'Form submission failed');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -142,7 +150,8 @@ if (contactForm) {
             }, 5000);
         } finally {
             // Reset button state
-            submitBtn.classList.remove('loading');
+            if (btnText) btnText.style.display = 'inline-block';
+            if (btnLoading) btnLoading.style.display = 'none';
             submitBtn.disabled = false;
         }
     });

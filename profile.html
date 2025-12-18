@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="North8 Development Corporation - Creating opportunities for SMEs and micro-entrepreneurs">
+    <title>North8 Development Corporation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        /* Gallery Modal Styles */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            width: 80%;
+            max-width: 1000px;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+            z-index: 1001;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.6;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+            
+            .close-btn {
+                font-size: 30px;
+                top: 10px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        <div class="logo">
+                <img src="images/logo.png" alt="North8 Logo" width="100" height="100">
+                <div class="logo-text">
+                    <h1>North8</h1>
+                    <p>Development Corporation</p>
+                </div>
+            </div>
+        <div class="container">
+            
+            <div class="header-content">
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="profile.html" class="btn-contact">Company Profile</a></li>
+                    </ul>
+                </nav>
+
+                <div class="contacts">
+                    <div class="contact-item">
+                        <img src="images/message.png" alt="Contact us" width="24" height="24">
+                        <p>Feel Free to talk to us! <a href="tel:09260987888">09260987888</a></p>
+                    </div>
+                    <div class="contact-item social">
+                        <a href="https://www.facebook.com/share/1AZixpFcZS/" aria-label="Facebook">
+                            <img src="images/facebook.png" alt="Facebook" width="24" height="24">
+                        </a>
+                        <p>Follow us on Facebook</p> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <div class="spacer"></div>
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content2">
+                <div class="mission-logo">
+                    <img src="images/logo.png" alt="North8 Logo" width="150" height="150">
+                    <h2>North8 <span>Development Corporation</span></h2>
+                </div>
+                <div class="mission-text">
+                    <h2>What is NORTH8?</h2>
+                    <p>North8 is managed by North8 Development Corporation, a property development company committed to creating opportunities for SMEs and micro-entrepreneurs. Its core purpose is to develop prime, well-organized spaces that support business growth and community living. These developments include commercial shops, office and service-sector spaces, food districts, and residential rooms designed to serve both entrepreneurs and the surrounding community.</p>
+                </div>
+                <div class="mission-text">
+                    <h2>History</h2>
+                    <p>North8 began its journey on September 8, 2013, at North Road, Basak, Mandaue City, Cebu. Founded with the support of family and business partners, the vision was clear from the start: to build a safe, decent, and convenient one-stop community where micro-entrepreneurs can showcase and grow their businesses within an organized and accessible district.</p>
+                </div>
+                <div class="mission-text">
+                    <h2>Our Goal</h2>
+                    <p>Our goal is simple to share what we have built and provide meaningful opportunities for SMEs and micro-entrepreneurs to create a better future. While our developments welcome both locals and foreigners, our mission is deeply rooted in empowering Filipinos by helping them build, grow, and succeed in business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">North8 Branches</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">A modern, organized business hub offering commercial, office, food, service, and residential spaces designed to support SMEs and build thriving communities.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="branches/talamban.jpg" alt="Commercial Spaces" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Talamban Branch</h3>
+                        <p>📍 USC-TC, Talamban</p>
+                        <p>A growing business and residential space near Cebu's academic district.</p>
+                        <a href="#" class="btn-service view-gallery" data-gallery="talamban">View Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="branches/mandue.jpg" alt="Community Development" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mandaue Branch</h3>
+                        <p>📍 Basak, Mandaue City</p>
+                        <p>A prime commercial hub supporting SMEs in the heart of Mandaue City.</p>
+                        <a href="#" class="btn-service view-gallery" data-gallery="mandaue">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admin Team</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Manages daily operations, tenant coordination, and ensures a smooth, organized, and secure North8 community experience.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="admins/pic4.jpg" alt="Commercial Spaces" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>North8 Development</h3>
+                        <p>Manages operations, tenant support, and daily community services.</p>
+                        <a href="#" class="btn-service view-gallery" data-gallery="admins">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="North8 Logo" width="80" height="80">
+                        <h3>North8 <span>Development Corporation</span></h3>
+                    </div>
+                    <p>Creating opportunities for SMEs and micro-entrepreneurs through innovative development solutions and community-focused spaces.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="profile.html">Company Profile</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Commercial Spaces</a></li>
+                        <li><a href="#">SME Support</a></li>
+                        <li><a href="#">Community Development</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Business Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>NORTH8 BLDG. Basak, Mandaue City, Cebu 6014</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:09260987888">09260987888</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:north8corporation96@gmail.com">north8devcorp2013@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> North8 Development Corporation. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <span class="close-btn">&times;</span>
+        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-image" src="" alt="Gallery Image">
+        </div>
+        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        <div class="gallery-thumbnails" id="galleryThumbnails">
+            <!-- Thumbnails will be added here by JavaScript -->
+        </div>
+    </div>
+
+
+    <script>
+        // Gallery data - Add your image paths here
+        const galleries = {
+            talamban: [
+                'talamban/pic1.jpg',
+                'talamban/pic2.jpg',
+                'talamban/pic3.jpg',
+                'talamban/pic4.jpg',
+                'talamban/pic5.jpg',
+                'talamban/pic6.jpg',
+                'talamban/pic7.jpg',
+                'talamban/pic8.jpg',
+                'talamban/pic9.jpg',
+                'talamban/pic10.jpg',
+                'talamban/pic11.jpg',
+                'talamban/pic12.jpg',
+                'talamban/pic13.jpg',
+                'talamban/pic14.jpg',
+                'talamban/pic15.jpg',
+                'talamban/pic16.jpg',
+                'talamban/pic17.jpg',
+                'talamban/pic18.jpg',
+                'talamban/pic19.jpg',
+                'talamban/pic20.jpg',
+                'talamban/pic21.jpg',
+                'talamban/pic22.jpg',
+                'talamban/pic23.jpg',
+                'talamban/pic24.jpg',
+                'talamban/pic25.jpg',
+                'talamban/pic26.jpg',
+                'talamban/pic27.jpg',
+                'talamban/pic28.jpg',
+                'talamban/pic29.jpg',
+                'talamban/30.jpg',
+                'talamban/31.jpg',
+            ],
+            mandaue: [
+                'mandaue/pic1.jpg',
+                'mandaue/pic2.jpg',
+                'mandaue/pic3.jpg',
+                'mandaue/pic4.jpg',
+                'mandaue/pic5.jpg',
+                'mandaue/pic6.jpg',
+            ],
+            admins: [
+                'admins/pic1.jpg',
+                'admins/pic2.jpg',
+                'admins/pic3.jpg',
+                'admins/pic4.jpg',
+                
+            ]
+        };
+
+        // Gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            const thumbnailsContainer = document.getElementById('galleryThumbnails');
+            const closeBtn = document.querySelector('.close-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const galleryBtns = document.querySelectorAll('.view-gallery');
+            
+            let currentGallery = [];
+            let currentIndex = 0;
+
+            // Open modal with gallery
+            galleryBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const galleryName = this.getAttribute('data-gallery');
+                    if (galleries[galleryName]) {
+                        currentGallery = galleries[galleryName];
+                        currentIndex = 0;
+                        showImage(0);
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Navigation
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                showImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                showImage(currentIndex);
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display !== 'block') return;
+                
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                    showImage(currentIndex);
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % currentGallery.length;
+                    showImage(currentIndex);
+                }
+            });
+
+            // Show image and update thumbnails
+            function showImage(index) {
+                if (currentGallery.length === 0) return;
+                
+                const imageUrl = currentGallery[index];
+                modalImg.src = imageUrl;
+                
+                // Update thumbnails
+                thumbnailsContainer.innerHTML = '';
+                currentGallery.forEach((img, i) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = img;
+                    thumb.className = 'thumbnail' + (i === index ? ' active' : '');
+                    thumb.alt = `Thumbnail ${i + 1}`;
+                    thumb.addEventListener('click', () => {
+                        currentIndex = i;
+                        showImage(i);
+                    });
+                    thumbnailsContainer.appendChild(thumb);
+                });
+            }
+        });
+    </script>
+    
+    </body>
+</html>

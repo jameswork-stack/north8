@@ -31,7 +31,7 @@
                 
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
@@ -56,106 +56,7 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-video">
-            <video src="images/advertise.mp4" autoplay loop muted playsinline></video>
-            <div class="video-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Opportunities for (SME) Micro Entrepreneurs to Build a New Tomorrow</h1>
-                <p>Our goal is simple: we want to share what we've established and create opportunities for growth and success.</p>
-                <div class="cta-buttons">
-                    <a href="#about" class="btn btn-primary">Find Out More</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Introducing</span>
-                <h2 class="section-title">North8 <span>Development Corporation</span></h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>NORTH8 is a dynamic development initiative managed by North8 Development Corporation, built on a strong commitment to creating opportunities for SMEs and micro-entrepreneurs.</p>
-                    <p>With a clear vision of inclusive growth, North8 develops prime commercial and residential spaces that support business shops, offices, service sectors, food districts, and community living.</p>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
-                <div class="about-image">
-                    <img src="images/pic1.jpg" alt="North8 Development" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">What We Do</span>
-                <h2 class="section-title">Services We Offer</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Create a safe, organized, and convenient one-stop community where businesses can grow and people can thrive.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/com.jpg" alt="Commercial Spaces" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <h3>Commercial Spaces</h3>
-                        <p>Premium commercial space development designed specifically for business shops and retail outlets.</p>
-                        <a href="#contact" class="btn-service">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/support.jpg" alt="SME Support" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <h3>SME Support</h3>
-                        <p>Comprehensive business support services for SMEs and micro-entrepreneurs to help them thrive.</p>
-                        <a href="#contact" class="btn-service">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/community.jpg" alt="Community Development" loading="lazy">
-                    </div>
-                    <div class="service-content">
-                        <h3>One-Stop Community</h3>
-                        <p>Integrated community development with all essential services in one convenient location.</p>
-                        <a href="#contact" class="btn-service">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mission-section">
-        <div class="container">
-            <div class="mission-content">
-                <div class="mission-logo">
-                    <img src="images/logo.png" alt="North8 Logo" width="150" height="150">
-                    <h2>North8 <span>Development Corporation</span></h2>
-                </div>
-                <div class="mission-text">
-                    <h2>Our Mission</h2>
-                    <p>North8 is managed by North8 Development Corporation. Our core mission is to create opportunities for (SME) Micro-Entrepreneurs by developing prime commercial and residential spaces that support business growth and community development.</p>
-                    <p>We specialize in creating integrated environments that include business shops, offices, service sectors, food districts, and residential communities, all designed to foster success and growth.</p>
-                    <a href="#about" class="btn btn-outline-light">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="spacer"></div>
 
     <section id="contact" class="contact-section">
         <div class="container">
@@ -169,7 +70,7 @@
                     
                     <p>Have questions or want to learn more about our services? Our team is here to help you with any inquiries you may have.</p>
                     
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnnekjrd" method="POST">
+                    <form class="contact-form" id="contactForm">
                         <input type="hidden" name="_replyto" value="north8devcorp2013@gmail.com">
                         <input type="hidden" name="_subject" value="New Contact Form Submission">
                         <input type="hidden" name="_next" value="/thank-you.html">
@@ -301,13 +202,13 @@
             </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 
-    <!-- Success Popup -->
+    <script src="js/contact.js"></script>
+
     <div class="popup-overlay" id="success-popup">
         <div class="popup-content">
             <div class="popup-icon">
@@ -322,10 +223,5 @@
         </div>
     </div>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
-
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
 </body>
 </html>

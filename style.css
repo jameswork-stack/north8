@@ -298,6 +298,10 @@ header {
     position: relative;
     text-decoration: none;
 }
+.spacer {
+    height: 90px;
+    width: 100%;
+}
 
 .main-nav a:after {
     content: '';
