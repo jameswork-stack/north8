@@ -144,7 +144,7 @@ header {
     transition: var(--transition);
     backdrop-filter: blur(10px);
     display: flex;
-    padding: 20px 30px;
+    padding: 30px 30px;
 }
 
 .header-container {
@@ -166,7 +166,7 @@ header {
 }
 
 .logo img {
-    height: 45px;
+    height: 50px;
     width: auto;
     margin-right: 12px;
     transition: var(--transition);
@@ -1122,6 +1122,13 @@ header {
     .hero h1 {
         font-size: 2.5rem;
     }
+    .logo img {
+        height: 80px;
+    }
+
+    .contacts {
+        padding-top: 10px;
+    }
     
     .section-title {
         font-size: 2rem;
@@ -1258,6 +1265,8 @@ header {
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
 
 /* Section 2 Styles */
 .sec2 {
@@ -1562,6 +1571,7 @@ header {
     .logo {
         justify-content: center;
         margin-right: 0;
+        margin-bottom: 20px;
     }
     
     .sec2-text,
@@ -1713,4 +1723,17 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+@media (max-width: 420px) {
+    header {
+        padding: 5px;
+    }
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .contacts {
+        margin-bottom: 20px;
+    }
+    
 }
