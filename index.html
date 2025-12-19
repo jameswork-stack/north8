@@ -64,6 +64,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Opportunities for (SME) Micro Entrepreneurs to Build a New Tomorrow</h1>
+                <h2 style="color: orange;">Property Rentals and Development</h2>
                 <p>Our goal is simple: we want to share what we've established and create opportunities for growth and success.</p>
                 <div class="cta-buttons">
                     <a href="profile.html" class="btn btn-primary">Find Out More</a>
@@ -72,6 +73,55 @@
             </div>
         </div>
     </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">North8 Branches</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">A modern, organized business hub offering commercial, office, food, service, and residential spaces designed to support SMEs and build thriving communities.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="talamban/branch.jpg" alt="Commercial Spaces" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Talamban Branch</h3>
+                        <p>📍 USC-TC, Talamban</p>
+                        <p>A growing business and residential space near Cebu's academic district.</p>
+                        <a href="#" class="btn-service view-gallery" data-gallery="talamban">View Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="branches/mandue.jpg" alt="Community Development" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mandaue Branch</h3>
+                        <p>📍 Basak, Mandaue City</p>
+                        <p>A prime commercial hub supporting SMEs in the heart of Mandaue City.</p>
+                        <a href="#" class="btn-service view-gallery" data-gallery="mandaue">View Gallery</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="lapu2/pic8.jpg" alt="Community Development" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>LAPU2X BRANCH</h3>
+                        <p>📍 S.Osmeña St. Gun.ob, Lapu2x City</p>
+                        <p>Soon To open.</p><br>
+                        <a href="#" class="btn-service view-gallery" data-gallery="lapu2">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section id="about" class="about-section">
         <div class="container">
@@ -106,7 +156,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/com.jpg" alt="Commercial Spaces" loading="lazy">
+                        <img src="branches/com.jpg" alt="Commercial Spaces" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>Commercial Spaces</h3>
@@ -117,7 +167,7 @@
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/support.jpg" alt="SME Support" loading="lazy">
+                        <img src="branches/sme2.jpg" alt="SME Support" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>SME Support</h3>
@@ -128,7 +178,7 @@
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/community.jpg" alt="Community Development" loading="lazy">
+                        <img src="branches/onestop.jpg" alt="Community Development" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>One-Stop Community</h3>
@@ -322,10 +372,175 @@
         </div>
     </div>
 
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="modal-content">
+            <span class="close-btn" aria-label="Close">&times;</span>
+            <button class="nav-btn prev-btn" aria-label="Previous image">&#10094;</button>
+            <img id="modalImage" src="" alt="Gallery Image" class="modal-image">
+            <button class="nav-btn next-btn" aria-label="Next image">&#10095;</button>
+            <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+        </div>
+    </div>
+
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 
+    <!-- Gallery JavaScript -->
+    <script>
+        // Gallery data - Add your image paths here
+        const galleries = {
+            talamban: [
+                'talamban/pic1.jpg',
+                'talamban/pic2.jpg',
+                'talamban/pic3.jpg',
+                'talamban/pic4.jpg',
+                'talamban/pic5.jpg',
+                'talamban/pic6.jpg',
+                'talamban/pic7.jpg',
+                'talamban/pic8.jpg',
+                'talamban/pic9.jpg',
+                'talamban/pic10.jpg',
+                'talamban/pic11.jpg',
+                'talamban/pic12.jpg',
+                'talamban/pic13.jpg',
+                'talamban/pic14.jpg',
+                'talamban/pic15.jpg',
+                'talamban/pic16.jpg',
+                'talamban/pic17.jpg',
+                'talamban/pic18.jpg',
+                'talamban/pic19.jpg',
+                'talamban/pic20.jpg',
+                'talamban/pic21.jpg',
+                'talamban/pic22.jpg',
+                'talamban/pic23.jpg',
+                'talamban/pic24.jpg',
+                'talamban/pic25.jpg',
+                'talamban/pic26.jpg',
+                'talamban/pic27.jpg',
+                'talamban/pic28.jpg',
+                'talamban/pic29.jpg',
+                'talamban/30.jpg',
+                'talamban/31.jpg',
+            ],
+            mandaue: [
+                'mandaue/pic1.jpg',
+                'mandaue/pic2.jpg',
+                'mandaue/pic3.jpg',
+                'mandaue/pic4.jpg',
+                'mandaue/pic5.jpg',
+                'mandaue/pic6.jpg',
+            ],
+            lapu2: [
+                'lapu2/pic1.jpg',
+                'lapu2/pic2.jpg',
+                'lapu2/pic3.jpg',
+                'lapu2/pic4.jpg',
+                'lapu2/pic5.jpg',
+                'lapu2/pic6.jpg',
+                'lapu2/pic7.jpg',
+                'lapu2/pic8.jpg',
+                'lapu2/pic9.jpg',
+            ]
+        };
+
+        // Gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            const thumbnailsContainer = document.getElementById('galleryThumbnails');
+            const closeBtn = document.querySelector('.close-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const galleryBtns = document.querySelectorAll('.view-gallery');
+            
+            let currentGallery = [];
+            let currentIndex = 0;
+
+            // Open modal with gallery
+            galleryBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const galleryName = this.getAttribute('data-gallery');
+                    if (galleries[galleryName]) {
+                        currentGallery = galleries[galleryName];
+                        currentIndex = 0;
+                        showImage(0);
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Navigation
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                showImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                showImage(currentIndex);
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display !== 'block') return;
+                
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                    showImage(currentIndex);
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % currentGallery.length;
+                    showImage(currentIndex);
+                }
+            });
+
+            // Show image and update thumbnails
+            function showImage(index) {
+                if (currentGallery.length === 0) return;
+                
+                const imageUrl = currentGallery[index];
+                modalImg.src = imageUrl;
+                
+                // Update thumbnails
+                thumbnailsContainer.innerHTML = '';
+                currentGallery.forEach((img, i) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = img;
+                    thumb.className = 'thumbnail' + (i === index ? ' active' : '');
+                    thumb.alt = `Thumbnail ${i + 1}`;
+                    thumb.addEventListener('click', () => {
+                        currentIndex = i;
+                        showImage(i);
+                    });
+                    thumbnailsContainer.appendChild(thumb);
+                });
+            }
+        });
+    </script>
+
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+    
 </body>
 </html>
